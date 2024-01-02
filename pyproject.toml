@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "datalakehouse-lowcost"
+version = "0.1.0"
+description = ""
+authors = ["marcelo-borges <marcelo.b.orges@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
