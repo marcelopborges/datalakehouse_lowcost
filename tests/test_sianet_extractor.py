@@ -1,7 +1,8 @@
 import json
+from unittest.mock import patch, MagicMock
 
 import pytest
-from unittest.mock import patch, MagicMock
+
 from elt.extractor.sianet_extractor import SianetExtractor
 
 
@@ -65,6 +66,3 @@ def test_extract_dna_calendar(sianet_extractor):
         data = sianet_extractor.extract_dna_calendar(date)
         mock_get.assert_called_once_with(f'https://fakeapi.com/', params=test_params)
         assert data == response_data
-
-
-

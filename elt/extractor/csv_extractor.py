@@ -1,9 +1,10 @@
 import pandas as pd
+
 from .base import Extractor
 
 
 class CSVExtractor(Extractor):
-    def __init__(self,file_path):
+    def __init__(self, file_path):
         self.file_path = file_path
         return
 

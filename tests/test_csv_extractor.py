@@ -1,8 +1,8 @@
 import sys
 from pathlib import Path
-import os
+from unittest.mock import patch
+
 import pandas as pd
-from unittest.mock import Mock, patch
 
 root_dir = Path(__file__).parent.parent
 sys.path.append(str(root_dir))

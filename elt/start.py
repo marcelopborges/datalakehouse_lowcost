@@ -1,7 +1,9 @@
-from datetime import timedelta, datetime
-from elt.extractor.sianet_extractor import SianetExtractor
-from dotenv import load_dotenv
 import os
+from datetime import timedelta, datetime
+
+from dotenv import load_dotenv
+
+from elt.extractor.sianet_extractor import SianetExtractor
 
 load_dotenv()
 
