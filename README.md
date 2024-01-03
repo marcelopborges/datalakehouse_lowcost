@@ -1,6 +1,8 @@
 # Data Lake House
 
 ## Escopo do Teste MVP de Data Pipeline Utilizando Python, GCP e DuckDB
+![Python Version](https://img.shields.io/badge/Python-3.11.6-blue)
+[![Python Tests with Poetry](https://github.com/marcelopborges/datalakehouse_lowcost/actions/workflows/python-app.yml/badge.svg?branch=main)](https://github.com/marcelopborges/datalakehouse_lowcost/actions/workflows/python-app.yml)
 
 ##### Objetivo:
 
