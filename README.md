@@ -3,7 +3,9 @@
 ## Escopo do Teste MVP de Data Pipeline Utilizando Python, GCP e duckDB
 
 ##### Objetivo:
-Desenvolver e validar um MVP de data pipeline para coletar, transformar e armazenar dados de API's. Os dados serão processados utilizando Python, armazenados no Google BigQuery e visualizados através do Power BI.
+
+Desenvolver e validar um MVP de data pipeline para coletar, transformar e armazenar dados de API's. Os dados serão
+processados utilizando Python, armazenados no Google BigQuery e visualizados através do Power BI.
 
 ### Etapas do Projeto:
 
@@ -31,10 +33,10 @@ Desenvolver e validar um MVP de data pipeline para coletar, transformar e armaze
 * Testes para assegurar a correta visualização e interpretação dos dados.
 
 ### Custos Estimados:
+
 #### Custos de Desenvolvimento e Operação:
 
 * Recursos computacionais para desenvolvimento e execução dos scripts Python.
-
 
 #### Custos de Armazenamento e Processamento no BigQuery:
 
@@ -48,6 +50,7 @@ Desenvolver e validar um MVP de data pipeline para coletar, transformar e armaze
 
 #### Considerações Adicionais:
 
-* Segurança e Privacidade dos Dados: Implementação de medidas para proteger os dados durante a coleta, processamento e armazenamento.
+* Segurança e Privacidade dos Dados: Implementação de medidas para proteger os dados durante a coleta, processamento e
+  armazenamento.
 * Documentação: Manutenção de documentação detalhada sobre os scripts Python e processos de pipeline.
 * Testes e Validação: Realização de testes rigorosos para garantir a acurácia e a eficácia da pipeline.

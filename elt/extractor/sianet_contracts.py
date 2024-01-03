@@ -4,7 +4,7 @@ Quaisquer dados diferente daqui, deverá ser solicitado e iniciará um novo proj
 
 Dado na núvem é gasto!!!
 """
-expected_columns =\
+expected_columns = \
     [
         "PREFIXO_CARRO",
         "ID_EQUIPAMENTO",

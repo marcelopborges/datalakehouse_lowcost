@@ -3,4 +3,4 @@ repos:
     rev: master
     hooks:
       - id: commitizen
-        stages: [commit-msg]
+        stages: [ commit-msg ]

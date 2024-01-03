@@ -1,8 +1,8 @@
 import json
 
-from .base import Extractor
 import requests
-from datetime import datetime, timedelta
+
+from .base import Extractor
 
 
 class SianetExtractor(Extractor):
@@ -41,4 +41,3 @@ class SianetExtractor(Extractor):
         response.raise_for_status()
         response = response.content.decode('utf-8')
         return json.loads(response)
-
