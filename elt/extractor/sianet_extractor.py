@@ -25,7 +25,7 @@ class SianetExtractor(Extractor):
         global token_data
         current_time = datetime.now()
         if token_data["token"] and token_data["expiry"] > current_time:
-            return token_data["token"]
+            return token_data["token"], token_data["expiry"]
         auth_url = os.getenv("SIANET_AUTH_URL")
         username = os.getenv("SIANET_USERNAME")
         password = os.getenv("SIANET_PASSWORD")
