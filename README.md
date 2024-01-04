@@ -34,6 +34,8 @@ processados utilizando Python, armazenados no Cloud Storage da Google e visualiz
 * Conexão do GCP ao Power BI.
 * Desenvolvimento de dashboards e relatórios no Power BI para análise dos dados.
 
+### Arquitetura proposta:
+![img.png](img.png)
 ### Custos Estimados:
 
 #### Custos de Desenvolvimento e Operação:
