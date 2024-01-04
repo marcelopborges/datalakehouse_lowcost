@@ -1,16 +1,13 @@
 import os
 from datetime import timedelta, datetime
-
 from dotenv import load_dotenv
-
 from elt.extractor.sianet_extractor import SianetExtractor
+from elt.transformer import Transformer
 
 load_dotenv()
 
 
 def run_elt_process(metodo, date):
-    # today = datetime.now()
-    # d1 = (today - timedelta(days=10)).strftime('%d/%m/%Y')
     sianet_extractor = SianetExtractor(base_url=os.getenv("SIANET_API_URL"), nome_dna=metodo)
     match metodo:
         case 'dna_kmRodado':
@@ -19,18 +16,21 @@ def run_elt_process(metodo, date):
             raw_data = sianet_extractor.extract_dna_linha(date)
         case 'dna_calendario':
             raw_data = sianet_extractor.extract_dna_calendar(date)
+        case 'dna_passageiros':
+            raw_data = sianet_extractor.extract_dna_passageirosTranspArcoSul(date)
         case _:
             raise ValueError(f"Método desconhecido")
-    return raw_data
+    transformer = Transformer(metodo, raw_data)
+    transformed_data = transformer.convert_data()
+    return transformed_data
 
 
 if __name__ == "__main__":
-    # for i in range(31):
-    #     today = datetime.now()
-    #     d1 = (today - timedelta(days=i)).strftime('%d/%m/%Y')
-    #     run_elt_process(i)
 
-    today = datetime.now()
-    d1 = (today - timedelta(days=10)).strftime('%d/%m/%Y')
-    # run_elt_process(d1)
-    print(run_elt_process(metodo='dna_calendario', date=d1))
+    for _ in range(1):
+        today = datetime.now()
+        d1 = (today - timedelta(days=_ + 2)).strftime('%d/%m/%Y')
+        run_elt_process("dna_kmRodado", d1)
+        run_elt_process("dna_linha", d1)
+        run_elt_process("dna_calendario", d1)
+        run_elt_process("dna_passageiros", d1)
