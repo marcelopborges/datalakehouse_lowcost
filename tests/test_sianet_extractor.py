@@ -49,6 +49,7 @@ def test_extract_dna_linha(mock_get, mock_auth_token):
 
     mock_get.assert_called_once_with(expected_url, headers=expected_headers)
     assert actual_response == expected_response_data
+    assert 'Authorization' in mock_get.call_args.kwargs['headers']
 
 
 @patch("requests.get")
@@ -69,6 +70,7 @@ def test_extract_dna_calendar(mock_get, mock_auth_token):
 
     mock_get.assert_called_once_with(expected_url, headers=expected_headers)
     assert actual_response == expected_response_data
+    assert 'Authorization' in mock_get.call_args.kwargs['headers']
 
 
 @patch("requests.get")
@@ -89,3 +91,4 @@ def test_extract_dna_passageirosTranspArcoSul(mock_get, mock_auth_token):
 
     mock_get.assert_called_once_with(expected_url, headers=expected_headers)
     assert actual_response == expected_response_data
+    assert 'Authorization' in mock_get.call_args.kwargs['headers']
