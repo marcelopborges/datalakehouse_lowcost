@@ -4,10 +4,10 @@ from datetime import datetime
 
 
 class Transformer:
-    def __init__(self, nome_dna, raw_data):
+    def __init__(self, nome_dna, raw_data, date):
         self.raw_data = raw_data
         self.nome_dna = nome_dna
-        self.today = datetime.today().strftime('%Y%m%d')
+        self.date = date
 
     def convert_data(self):
         """
@@ -15,18 +15,20 @@ class Transformer:
         :return: o caminho do arquivo gerado já no formato parquet.
         """
         if not isinstance(self.raw_data, dict) or 'dados' not in self.raw_data:
-            raise ValueError("Formato JSON inválido ou chave 'dados' não encontrada")
+            return pd.DataFrame()
         df = pd.DataFrame(self.raw_data['dados'])
-        parquet_file_path = self.save_as_parquet(df)
+        parquet_file_path = self.save_as_parquet(df, date=self.date)
         return parquet_file_path
 
-    def save_as_parquet(self, df):
+    def save_as_parquet(self, df, date):
         """
         Verifica se o ditorio 'tmp' existe, senão cria.
         Monta o arquivo e converte como parquet
         """
-        if not os.path.exists('tmp'):
-            os.makedirs('tmp')
-        file_path = os.path.join('tmp', f'{self.nome_dna}_{self.today}.parquet')
+        date_obj = datetime.strptime(date,"%d/%m/%Y")
+        date_filename = date_obj.strftime("%d%m%Y")
+        if not os.path.exists('./tmp'):
+            os.makedirs('./tmp')
+        file_path = os.path.join('./tmp', f'{self.nome_dna}_{date_filename}.parquet')
         df.to_parquet(file_path)
         return file_path
