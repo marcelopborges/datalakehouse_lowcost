@@ -1,9 +1,8 @@
 from datetime import datetime
-
 import pytest
 from elt.transformer import Transformer
-import pandas as pd
-from unittest.mock import patch, mock_open
+from unittest.mock import patch
+import pyarrow
 import os
 
 
@@ -15,13 +14,6 @@ def example_data():
             {"coluna1": 3, "coluna2": 4}
         ]
     }
-
-def test_convert_data_with_valid_input(example_data):
-    transformer = Transformer("test_dna", example_data)
-    result = transformer.convert_data()
-    today = datetime.today().strftime('%Y%m%d')
-    expected_file_path = os.path.join('tmp', f'test_dna_{today}.parquet')
-    assert result == expected_file_path
 
 
 def test_convert_data_with_valid_input(example_data):
