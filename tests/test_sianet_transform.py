@@ -2,7 +2,6 @@ from datetime import datetime
 import pytest
 from elt.transformer import Transformer
 from unittest.mock import patch
-import pyarrow
 import os
 
 
