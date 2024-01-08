@@ -13,6 +13,8 @@ python-dotenv = "^1.0.0"
 requests = "^2.31.0"
 pydantic = "^2.5.3"
 pyarrow = "^14.0.2"
+jupyter = "^1.0.0"
+workalendar = "^17.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
