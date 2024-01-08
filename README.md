@@ -35,7 +35,7 @@ processados utilizando Python, armazenados no Cloud Storage da Google e visualiz
 * Desenvolvimento de dashboards e relatórios no Power BI para análise dos dados.
 
 ### Arquitetura proposta:
-![img.png](img.png)
+![img_3.png](img_3.png)
 ### Custos Estimados:
 
 #### Custos de Desenvolvimento e Operação:
