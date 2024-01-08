@@ -27,8 +27,8 @@ class Transformer:
         """
         date_obj = datetime.strptime(date,"%d/%m/%Y")
         date_filename = date_obj.strftime("%d%m%Y")
-        if not os.path.exists('./tmp'):
-            os.makedirs('./tmp')
-        file_path = os.path.join('./tmp', f'{self.nome_dna}_{date_filename}.parquet')
+        if not os.path.exists('../tmp'):
+            os.makedirs('../tmp')
+        file_path = os.path.join('../tmp', f'{self.nome_dna}_{date_filename}.parquet')
         df.to_parquet(file_path)
         return file_path

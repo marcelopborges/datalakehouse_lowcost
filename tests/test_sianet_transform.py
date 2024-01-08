@@ -1,6 +1,6 @@
 from datetime import datetime
 import pytest
-from elt.transformer import Transformer
+from elt.transformer.sianet_transformer import Transformer
 from unittest.mock import patch
 import os
 
@@ -24,7 +24,7 @@ def test_convert_data_with_valid_input(example_data, date):
     result = transformer.convert_data()
     date_obj = datetime.strptime(date, "%d/%m/%Y")
     date_filename = date_obj.strftime("%d%m%Y")
-    expected_file_path = os.path.join('./tmp', f'test_dna_{date_filename}.parquet')
+    expected_file_path = os.path.join('../tmp', f'test_dna_{date_filename}.parquet')
     assert result == expected_file_path
 
 
@@ -37,5 +37,5 @@ def test_save_as_parquet(mock_to_parquet, mock_makedirs, mock_path_exists, examp
     transformer = Transformer("test_dna", example_data, date)
     transformer.convert_data()
 
-    mock_makedirs.assert_called_once_with('./tmp')
+    mock_makedirs.assert_called_once_with('../tmp')
     mock_to_parquet.assert_called()
