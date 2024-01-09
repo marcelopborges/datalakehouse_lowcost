@@ -1,4 +1,6 @@
 from datetime import datetime
+
+import pandas as pd
 import pytest
 from elt.transformer.sianet_transformer import Transformer
 from unittest.mock import patch
@@ -22,20 +24,9 @@ def date():
 def test_convert_data_with_valid_input(example_data, date):
     transformer = Transformer("test_dna", example_data, date)
     result = transformer.convert_data()
-    date_obj = datetime.strptime(date, "%d/%m/%Y")
-    date_filename = date_obj.strftime("%d%m%Y")
-    expected_file_path = os.path.join('../tmp', f'test_dna_{date_filename}.parquet')
-    assert result == expected_file_path
 
+    # Cria um DataFrame a partir de example_data['dados'] para a comparação
+    expected_dataframe = pd.DataFrame(example_data['dados'])
 
-
-@patch("os.path.exists")
-@patch("os.makedirs")
-@patch("pandas.DataFrame.to_parquet")
-def test_save_as_parquet(mock_to_parquet, mock_makedirs, mock_path_exists, example_data, date):
-    mock_path_exists.return_value = False
-    transformer = Transformer("test_dna", example_data, date)
-    transformer.convert_data()
-
-    mock_makedirs.assert_called_once_with('../tmp')
-    mock_to_parquet.assert_called()
+    assert not result.empty
+    assert result.equals(expected_dataframe)

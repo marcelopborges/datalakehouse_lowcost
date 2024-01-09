@@ -1,0 +1,11 @@
+Para executar o script no terminal linux, quando está se usando virtalização de ambiente, é necessário
+salvar na sessão a localização do arquivo e passar a estrutura do código. Segue abaixo somente o exemplo da estrutura do código.
+
+Dados ficticios
+export GOOGLE_APPLICATION_CREDENTIALS="/caminho/absoluto/para/mvp-arquivo.json"
+
+Dados usados no meu ambiente.
+export PYTHONPATH="/home/marcelo-borges/Documentos/Projetos/datalakehouse_lowcost:$PYTHONPATH"
+python elt/start.py
+
+
