@@ -26,6 +26,17 @@ jobs:
       run: |
         poetry install
 
+    - name: Set PYTHONPATH
+      run: echo "PYTHONPATH=$GITHUB_WORKSPACE" >> $GITHUB_ENV
+
+    # O passo a seguir cria um arquivo de credenciais a partir do secret armazenado no GitHub
+    - name: Set up Google Cloud credentials
+      env:
+        GCP_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+      run: |
+        echo "$GCP_CREDENTIALS" > gcp-credentials.json
+        echo "GOOGLE_APPLICATION_CREDENTIALS=$(pwd)/gcp-credentials.json" >> $GITHUB_ENV
+
     - name: Run tests with pytest
       run: |
         poetry run pytest
