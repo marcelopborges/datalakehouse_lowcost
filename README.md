@@ -6,7 +6,7 @@
 
 ##### Objetivo:
 
-Desenvolver e validar um MVP de data pipeline para coletar, transformar e armazenar dados de API's. Os dados serão
+Desenvolver e validar um MVP de data lakehouse para coletar, transformar e armazenar dados de API's. Os dados serão
 processados utilizando Python, armazenados no Cloud Storage da Google e visualizados através do Power BI.
 
 ### Etapas do Projeto:
