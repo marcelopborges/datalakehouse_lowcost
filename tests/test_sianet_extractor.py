@@ -2,6 +2,10 @@ from datetime import datetime, timedelta
 from unittest.mock import patch, MagicMock
 import pytest
 from elt.extractor.sianet_extractor import SianetExtractor
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 @pytest.fixture
 def mock_auth_token():
