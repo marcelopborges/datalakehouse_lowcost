@@ -2,8 +2,7 @@ from io import BytesIO
 import pandas as pd
 
 
-
-class Transformer:
+class Conversor:
     def __init__(self, nome_dna, raw_data, date):
         self.raw_data = raw_data
         self.nome_dna = nome_dna
@@ -21,12 +20,22 @@ class Transformer:
 
         return df
 
-
-    def save_as_parquet(self, df, date):
+    def save_raw_as_parquet(self, df, date):
         output = BytesIO()
         df.to_parquet(output, index=False)
         output.seek(0)  # Retorna ao início do stream
+
         date_str = pd.to_datetime(date, dayfirst=True).strftime("%Y%m%d")
         filename = f"{self.nome_dna}_{date_str}.parquet"
+        return output, filename
+
+
+    def save_transf_as_parquet(self, df, date, filename_prefix):
+        output = BytesIO()
+        df.to_parquet(output, index=False)
+        output.seek(0)  # Retorna ao início do stream
+
+        date_str = pd.to_datetime(date, dayfirst=True).strftime("%Y%m%d")
+        filename = f"{filename_prefix}_{date_str}.parquet"
         return output, filename
 

@@ -32,3 +32,13 @@ class GCPStorageClient:
             self.logger.error(f"Erro ao fazer upload do arquivo: {e}")
             raise
 
+
+    # def download_blob_to_memory(self, bucket_name, blob_name):
+    #     try:
+    #         bucket = self.storage_client.bucket(bucket_name)
+    #         blob = bucket.blob(blob_name)
+    #         return blob.download_as_string()
+    #     except Exception as e:
+    #         self.logger.error(f"Erro ao fazer download do arquivo: {e}")
+    #         raise
+

@@ -16,7 +16,9 @@ pyarrow = "^14.0.2"
 jupyter = "^1.0.0"
 workalendar = "^17.0.0"
 google-cloud-storage = "^2.14.0"
-dbt = "^1.0.0.35.1"
+dbt-bigquery = "^1.7.2"
+pandas-gbq = "^0.20.0"
+google-cloud-bigquery = "^3.15.0"
 
 
 [tool.poetry.group.dev.dependencies]

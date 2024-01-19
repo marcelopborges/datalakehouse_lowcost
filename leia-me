@@ -8,4 +8,7 @@ Dados usados no meu ambiente.
 export PYTHONPATH="/home/marcelo-borges/Documentos/Projetos/datalakehouse_lowcost:$PYTHONPATH"
 python elt/start.py
 
+para o duckdb acessar o google cloud precisa-se criar uma chave hmac
+https://console.cloud.google.com/storage/settings;tab=interoperability?authuser=2&project=mvp-hp
+
 
